@@ -19,6 +19,7 @@
     "node-fetch": "^3.3.0",
     "package": "^1.0.1",
     "pg": "^8.8.0",
-    "sequelize": "^6.25.3"
+    "sequelize": "^6.25.3",
+    "serverless-http": "^3.1.0"
   }
 }

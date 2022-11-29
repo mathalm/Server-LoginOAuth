@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(serverRoutes)
 
 
-app.listen(process.env.PORY || 3030, () =>{
-  console.log('Server is running');
+let listener = app.listen(process.env.PORT || 3030, () =>{
+  console.log(`Server is running ${listener.address().port}`);
 })
 

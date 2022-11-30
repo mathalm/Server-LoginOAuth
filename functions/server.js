@@ -1,26 +1,19 @@
-import express from 'express';
-import cors from 'cors';
-const app = express()
-import serverless from 'serverless-http'
-import serverRoutes from '../routes/serveRoutes.js';
+import express, { Router } from "express";
+import cors from "cors";
+const app = express();
+import serverless from "serverless-http";
+import serverRoutes from "../routes/serveRoutes.js";
 
+app.use(cors());
+app.use(express.json());
+app.use("/.netlify/functions/server", serverRoutes);
 
-app.use(cors({
-  origin: 'http://localhost:3000'
-}))
-app.use(express.json())
-app.use(serverRoutes)
+const router = Router();
 
-
-// let listener = app.listen(process.env.PORT || 3030, () =>{
-//   console.log(`Server is running ${listener.address().port}`);
-// })
-// let handler = serverless(app);
-// export default handler(async (event, context) => {
-//   const result = await handler(event, context);
-//   console.log(event);
-//   console.log(context);
-//   return result;
-// }) 
+router.get("/json", (req, res) => {
+  res.json({
+    teste: "Testando teste",
+  });
+});
 
 module.exports.handler = serverless(app);

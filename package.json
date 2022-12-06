@@ -19,6 +19,7 @@
     "morgan": "^1.10.0",
     "node-fetch": "^3.3.0",
     "package": "^1.0.1",
+    "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.26.0",
     "serverless-http": "^3.1.0"
@@ -34,6 +35,7 @@
   "homepage": "https://github.com/mathalm/Server-LoginOAuth#readme",
   "description": "",
   "devDependencies": {
+    "pg": "^8.8.0",
     "@emailjs/browser": "^3.9.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
